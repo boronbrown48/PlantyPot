@@ -11,8 +11,8 @@ url = 'https://notify-api.line.me/api/notify'
 token = 'QWZmYQEy3mchGCPb9VdlyruZq7ZqJsD6D8VFNJyjVkr'
 headers = {'Authorization':'Bearer '+ token}
 msg ="gu sent this message from line notify"
-r = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
-print(r.text)
+response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
+
 
 
 #connect with NETPIE
@@ -35,6 +35,8 @@ microgear.connect(False)
 
 #MAIN FUNCTION
 count=0
+
+
 while True:
     microgear.chat("PlantyPot_web",str(count))
     microgear.chat("Plant_Detail",str(count))
