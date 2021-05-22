@@ -11,7 +11,7 @@ url = 'https://notify-api.line.me/api/notify'
 token = 'QWZmYQEy3mchGCPb9VdlyruZq7ZqJsD6D8VFNJyjVkr'
 headers = {'Authorization':'Bearer '+ token}
 msg ="gu sent this message from line notify"
-response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
+#response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
 
 
 
@@ -33,9 +33,16 @@ microgear.on_disconnect = disconnect
 microgear.subscribe("/mails")
 microgear.connect(False)
 
+def checkCurrentLight(min,max,currentLight):
+    if(currentLight<min):
+        print("แดดน้อยไป ไม่อิ่ม")
+    elif(currentLight>max):
+        print("Gu will burnnn")
+    else:
+        print("I like this place!")
+
 #MAIN FUNCTION
 count=0
-
 
 while True:
     microgear.chat("PlantyPot_web",str(count))
