@@ -55,7 +55,8 @@
     </nav>
     <h1 id="connected_NETPIE"></h1>
     <p id="raw_data"></p>
-
+    
+    
 
 
 
@@ -77,7 +78,8 @@
       alias: ALIAS
     });
     microgear.on('message', function (topic, msg) {
-      document.getElementById("raw_data").innerHTML = "Count= " + msg;
+      /* document.getElementById("raw_data").innerHTML = "Count= " + msg; */
+      document.getElementById("raw_data").innerHTML = "Data= " + msg;
     });
     microgear.on('connected', function () {
       microgear.setAlias(ALIAS);
