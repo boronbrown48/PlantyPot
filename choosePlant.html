@@ -55,6 +55,8 @@
     </nav>
     <h1 id="connected_NETPIE"></h1>
     <p id="raw_data"></p>
+    <p>Please Enter Plant Name</p>
+    <input type="text" name='search' placeholder="Enter plant name" id="InputPlantName">
  
 
   </div>
@@ -74,8 +76,17 @@
       secret: SECRET,
       alias: ALIAS
     });
+    // Get the input field
+    var input = document.getElementById("InputPlantName")
+    input.addEventListener("keyup", function(event) {
+    // 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+        microgear.chat("Pi",input.value)
+        }
+      });
+
     microgear.on('message', function (topic, msg) {
-      document.getElementById("raw_data").innerHTML = "Count= " + msg;
+      //document.getElementById("raw_data").innerHTML = "Count= " + msg;
     });
     microgear.on('connected', function () {
       microgear.setAlias(ALIAS);
