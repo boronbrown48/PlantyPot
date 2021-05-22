@@ -14,7 +14,7 @@ url = 'https://notify-api.line.me/api/notify'
 token = 'QWZmYQEy3mchGCPb9VdlyruZq7ZqJsD6D8VFNJyjVkr'
 headers = {'Authorization':'Bearer '+ token}
 msg ="gu sent this message from line notify"
-response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
+#response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
 
 
 
@@ -39,17 +39,15 @@ microgear.on_disconnect = disconnect
 microgear.subscribe("/mails")
 microgear.connect(False)
 
+
 # Read data from Json
 with open("plantInfo.json", "r") as read_file:
     plantAll = json.load(read_file)
 
 
+
 #MAIN FUNCTION
 count=0
-
-def SearchData(name):
-    data = plantAll[name] 
-    return data 
 
 while True:
     microgear.chat("PlantyPot_web",str(count))  
