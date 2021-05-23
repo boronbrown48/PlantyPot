@@ -2,20 +2,115 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
  
   <!-- ======================= style CSS ======================= -->
   <style>
-    .maincontainer{
+.maincontainer{
       padding: 0;
       width: 100%;
       height: 100%;
-      position:fixed;
-      background-color: aquamarine;
     }
+ body,html {
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.roboto{
+  font-family: 'Prompt', sans-serif;
+}
+.nav{
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.shadow{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+h2 {
+  font-size: 45px;
+  font-weight: 450;
+  
+}
 
+@media  only screen and (max-width:480px){
+    h1.responsive { font-size: 20px; }
+    h2.responsive { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+    h3.responsive { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+    p.responsive { font-size: 10px; }
+    img.top{
+        width: 100%;
+        height: 40vh; 
+        justify-content: center; 
+  }
+}
+span.dot-1 {
+    font-weight: 750;
+    color: #419b4a;
+}
+.text{
+    margin-top: 22%;
+    font-family: sans-serif;
+    text-transform:uppercase;
+    color: aliceblue;
+    font-weight: 550;
+    text-shadow: rgba(0, 0, 0, 0.555) 2px 2px 10px;
+}
+h1{
+  font-size: 25px;
+  margin-top: 22%;
+  
+}
+h4{
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
 
+.content-plant{
+  width: 100%;
+  height: auto;
+}
+.content-plant{
+  text-align: center;
+  width: 100%;
+}
+.content-plant-item {
+  border: 1px solid white;
+  width: 85%;
+}
+#yourContainer img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.size{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+
+}
+
+.card{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.tree{
+  margin-top: 3%; 
+  margin-bottom: 3%; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
 
 
 
@@ -30,67 +125,664 @@
   <script src="https://cdn.netpie.io/microgear.js"></script>
   
   <!-- ======================= MAIN DIV ======================= -->
-  <div class="container-fluid maincontainer ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+  <div class="container-fluid maincontainer roboto" style="padding-right: 0;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-12 nav">
+      <a class="navbar-brand" href="#">PlantyPot<span class="dot-1">.</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#features">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="#choose">Pricing</a>
           </li>
         </ul>
       </div>
     </nav>
-    <h1 id="connected_NETPIE"></h1>
-    <p id="raw_data"></p>
-    <p>Please Enter Plant Name</p>
-    <input type="text" name='search' placeholder="Enter plant name" id="InputPlantName">
- 
+
+    <!-- <h1 id="connected_NETPIE"></h1>
+    <p id="raw_data"></p> -->
+
+    <!-- row -->
+    <div class="row  ">
+      <div class=" col-12  "> 
+        <div id="home" class="card text-white">
+            <img src="https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+            class="img-fluid top" alt="Responsive image">
+                  <div class="card-img-overlay text text-center ">
+                    <h2 class="responsive" >Welcome To planty pot</h2>
+                    <p class="card-text" style="text-transform:none; font-weight: 300;">This is a website for plant lovers.</p>
+                  </div>
+            </div>
+        </div>
+        
+        <div id="features" class="col-sm-5 col-md-5 col-lg-5 col-5 yourContainer " style="margin-top: 5%; padding: 0%;" >
+          <img class="card-img " src="https://cdn.shopify.com/s/files/1/1706/1307/products/Aspidistra-Cast-Iron-Plant-Beth-Ball-Matt-White-Planter_b7654923-d940-401c-9932-d2c9c531dbd4_2000x.jpg?v=1569092947" alt="Card image">
+        </div> 
+
+        <div class="col-sm-7 col-md-7 col-lg-7 col-7 " style=" margin-top: 10%;">
+          <div class="innerrow " >
+            <h3 clss="responsive" style="text-align:left;  "
+            >What is PlantPot<span class="dot-1">.</span>
+            </h3>
+            <p  >Lorem ipsum dolor sit amet ipsum dolor sit amet.</p>
+          </div>
+        </div>
+
+      </div>
+      
+       
+       <!-- content -->
+       <div id="choose"  >
+         <hr>
+         <h3 style="text-align: center; margin-top: 7%; margin-bottom: 3%; ">
+          Choose Your Plant</h3>
+       </div>
+
+       <div class="container" style="justify-content: center;
+       align-items: center;" >
+         <div class="row "  >
+           <!-- tree1 -->
+           <div class="col-12 col-sm-12 col-md-4 col-lg-4  tree" s>
+               <div class="card shadow" style="width: 15rem; ">
+                <img class="card-img-top"  
+                src="https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202120/0006/faux-potted-pothos-houseplant-1-c.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Golden pothos <br>พลูด่าง</h5>
+                  <div class="btn-group">
+                    <a class="btn btn-default" style="background-color: rgb(36, 105, 9); color: aliceblue;" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Detail
+                    </a>
+                    <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                    onclick="chooseplant('plant01')">
+                      Choose
+                    </button>
+                    </div>
+                 </div>
+                 <div class="collapse" id="collapseExample1">
+                  <div class="card card-body" >
+                    <h5> How to take care</h5> 
+                    <i class="fas fa-sun "> LIGHT</i> low light, but grows well in medium and higher light areas too! <hr>
+                    <i class="fas fa-tint"> WATER</i> 50% of soil is dry <hr>
+                    <i class="fas fa-leaf"> FOOD</i>The Golden Pothos is such an easy indoor plant, and you don’t need to worry about fertilizing this one a lot.
+                  </div>
+                </div>
+
+                </div>
+              </div>
+              <!-- tree2 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree" style="margin-top: 3%;">
+              <div class="card shadow " style="width: 15rem; ">
+               <img class="card-img-top"  src="https://image.makewebeasy.net/makeweb/0/hGfyelyyz/carpet/1_38.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Cactus <br>กระบองเพชร</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" 
+                   style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                  onclick="chooseplant('plant02')">
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                    <i class="fas fa-sun"> LIGHT</i> Cactus needs as much sunlight <hr>
+                    <i class="fas fa-tint"> WATER</i> Water your Cactus sparingly, almost to the point of when the plant begins to wrinkle. <hr>
+                    <i class="fas fa-leaf"> FOOD</i> Before applying any type of plant food, make sure the soil is already damp-never apply to dry soil.
+                </div>
+              </div>
+             </div>
+           </div>
+
+           <!-- tree3 -->
+           <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+              <div class="card shadow" style="width: 15rem; ">
+               <img class="card-img-top"  
+               src="https://pueanry.co/wp-content/uploads/2018/04/monstera-%E0%B8%A1%E0%B8%AD%E0%B8%99%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B8%A3%E0%B9%88%E0%B8%B2-%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%9B%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%83%E0%B8%99%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%94%E0%B9%89-800x800.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Monstera <br>มอนสเตอร่า</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" 
+                   style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                  onclick="chooseplant('plant03')">
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Your Monstera can grow just about anywhere in your home! <hr>
+                  <i class="fas fa-tint"> WATER</i> Water your Monstera when the top 50-75% of the soil is dry. <hr>
+                  <i class="fas fa-leaf"> FOOD</i>For best results, feed your plant once a month throughout the spring and summer. 
+                </div>
+              </div>
+             </div>
+           </div>
+
+           <!-- tree4 -->
+           <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+            <div class="card shadow" style="width: 15rem; ">
+             <img class="card-img-top" 
+              src="https://img-ha.mthcdn.com/szwLqgxoiOxHvM7fHk60G72I8gc=/mthai.com/app/uploads/2020/08/1-5-1.jpg" alt="Card image cap">
+             <div class="card-body">
+               <h5 class="card-title">Snake Plant <br>ลิ้นมังกร</h5>
+               <div class="btn-group">
+                 <a class="btn btn-primary" 
+                 style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                 data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Detail
+                </a>
+      
+                <button type="button" class="btn btn-secondary " style="margin-left: 1%; "
+                onclick="chooseplant('plant04')" >
+                  Choose
+                </button>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample4">
+              <div class="card card-body">
+                <h5> How to take care</h5> 
+                    <i class="fas fa-sun"> LIGHT</i> They prefer bright indirect light where they will flourish. <hr>
+                    <i class="fas fa-tint"> WATER</i> Water well, but do not allow the plants to become soggy. <hr>
+                    <i class="fas fa-leaf"> FOOD</i> Fertilize up to twice a month in the spring and summer, however, avoid over-fertilization, which can lead to brown leaf tips.
+              </div>
+            </div>
+           </div>
+         </div>
+
+         <!-- tree5 -->
+         <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+              <div class="card shadow" style="width: 15rem; ">
+               <img class="card-img-top"  src="https://img-ha.mthcdn.com/rewzWXaDMDiMjaGF9ya4GOicOkw=/mthai.com/app/uploads/2020/08/1-11-1.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Ficus annulata<br>ช้อนเงินช้อนทอง</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" 
+                   style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                  onclick="chooseplant('plant05')">
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample5">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                    <i class="fas fa-sun"> LIGHT</i> Ficus prefers bright indirect light. Direct sun may burn the leaves and cause them to drop. <hr>
+                    <i class="fas fa-tint"> WATER</i> Water when the top 50%-75% of the soil is dry. <hr>
+                    <i class="fas fa-leaf"> FOOD</i> Feed once a month during the spring and summer with a liquid fertilizer for indoor plants.
+                </div>
+              </div>
+             </div>
+           </div>
+
+       <!-- tree6 -->
+       <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+        <div class="card shadow" style="width: 15rem; ">
+         <img class="card-img-top"  
+         src="https://img-ha.mthcdn.com/bfFWc9I6U1_R4ZsUW5_PG6l3kF0=/mthai.com/app/uploads/2020/08/1-2-1.jpg" alt="Card image cap">
+         <div class="card-body">
+           <h5 class="card-title">Rubber Plant <br>ยางอินเดีย</h5>
+           <div class="btn-group">
+             <a class="btn btn-primary" 
+             style="background-color: rgb(36, 105, 9); color: aliceblue;"
+             data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Detail
+            </a>
+  
+            <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+            onclick="chooseplant('plant06')" >
+              Choose
+            </button>
+          </div>
+        </div>
+        <div class="collapse" id="collapseExample6">
+          <div class="card card-body">
+            <h5> How to take care</h5> 
+                    <i class="fas fa-sun"> LIGHT</i> Thrives in medium to bright indirect light, and can tolerate bright direct light.  <hr>
+                    <i class="fas fa-tint"> WATER</i> Water every 1-2 weeks, allowing soil to dry out between waterings.  <hr>
+                    <i class="fas fa-leaf"> FOOD</i> For best results, feed your plant once during the spring and monthly throughout the summer.
+          </div>
+        </div>
+       </div>
+     </div>
+
+        <!-- tree7 -->
+       <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+              <div class="card shadow" style="width: 15rem; ">
+               <img class="card-img-top" 
+                src="https://img-ha.mthcdn.com/kjMinH6Ybp6fO6gZrHyKuTsXxA8=/mthai.com/app/uploads/2020/08/1-3-1.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Fiddle Fig <br>ไทรใบสัก</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" 
+                   style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                  onclick="chooseplant('plant07')">
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample7">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                    <i class="fas fa-sun"> LIGHT</i> Your Fiddle Leaf Fig will grow best with consistent, bright, filtered light. <hr>
+                    <i class="fas fa-tint"> WATER</i> Water when the top 50%-75% of the soil becomes dry.  <hr>
+                    <i class="fas fa-leaf"> FOOD</i> For best results, feed your plant once during the spring and monthly throughout the summer. 
+                </div>
+              </div>
+             </div>
+           </div>
+
+          <!-- tree8 -->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+            <div class="card shadow" style="width: 15rem; ">
+             <img class="card-img-top"  
+             src="https://auctions.logees.com/media/Z0001-02-Pink-Princess-3-scaled.jpg" alt="Card image cap">
+             <div class="card-body">
+               <h5 class="card-title">Philodendron <br>ฟิโลเดนดรอน</h5>
+               <div class="btn-group">
+                 <a class="btn btn-primary" 
+                 style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                 data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Detail
+                </a>
+      
+                <button type="button" class="btn btn-secondary " style="margin-left: 1%; "
+                onclick="chooseplant('plant08')"  >
+                  Choose
+                </button>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample8">
+              <div class="card card-body">
+                <h5> How to take care</h5> 
+                <i class="fas fa-sun"> LIGHT</i> Philodendron prefers bright, indirect light. It can survive in medium light conditions, but growth may slow.  <hr>
+                <i class="fas fa-tint"> WATER</i> Water your Philodendron when the top 50-75% of soil is dry.  <hr>
+                <i class="fas fa-leaf"> FOOD</i> Feed your Philodendron Birkin monthly in the spring and summer with a basic houseplant food 
+              </div>
+            </div>
+           </div>
+         </div>
+
+            <!-- tree9 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+              <div class="card shadow" style="width: 15rem; ">
+               <img class="card-img-top"  
+               src="https://cf.shopee.co.th/file/51e81b1bbee8b6d5b4a72ff0da4b029f" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Xanadu <br>ซานาดู</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" 
+                   style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                  onclick="chooseplant('plant09')" >
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample9">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Best in moderate to bright, indirect light. Avoid direct sunlight as this may cause the leaves to fade. <hr>
+                  <i class="fas fa-tint"> WATER</i> Water well then allow the top half of the soil to dry out before re-watering.  <hr>
+                  <i class="fas fa-leaf"> FOOD</i> Apply a weak solution of liquid fertiliser two or three times during the growing season.
+                </div>
+              </div>
+             </div>
+           </div>
+
+        <!-- tree10 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="https://theinspiredhousewife.com/wp-content/uploads/2020/07/5%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%94%E0%B8%B9%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%9E%E0%B8%B4%E0%B8%A9%E0%B8%9B%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%83%E0%B8%99%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%94%E0%B8%B56.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Boston fern <br>บอสตันเฟิร์น</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary" 
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+              onclick="chooseplant('plant10')" >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample10">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+              <i class="fas fa-sun"> LIGHT</i> Boston Fern will thrive in low to bright indirect light. <hr>
+              <i class="fas fa-tint"> WATER</i> Water your Button Fern when the top inch of the soil becomes dry. <hr>
+              <i class="fas fa-leaf"> FOOD</i> For best results, use a general-purpose liquid houseplant fertilizer diluted.
+            </div>
+          </div>
+         </div>
+       </div>
+
+          <!-- tree11 -->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+            <div class="card shadow" style="width: 15rem; ">
+             <img class="card-img-top"  
+             src="https://www.banidea.com/wp-content/uploads/2018/05/Chinese-Evergreen.jpg" alt="Card image cap">
+             <div class="card-body">
+               <h5 class="card-title">Aglaonema <br>เขียวหมื่นปี</h5>
+               <div class="btn-group">
+                 <a class="btn btn-primary" 
+                 style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                 data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  Detail
+                </a>
+      
+                <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+                onclick="chooseplant('plant11')" >
+                  Choose
+                </button>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample11">
+              <div class="card card-body">
+              <h5> How to take care</h5> 
+              <i class="fas fa-sun"> LIGHT</i> Bright indirect sunlight is optimal and will help your Aglaonema produce the beautiful pink spots on its leaves. <hr>
+              <i class="fas fa-tint"> WATER</i> Aglaonema prefer to be kept moist during the spring and summer, but make sure the soil isn’t soggy. <hr>
+              <i class="fas fa-leaf"> FOOD</i> For best results, use a general houseplant fertilizer once a month during the spring and summer.  
+
+              </div>
+            </div>
+           </div>
+         </div>
+         
+            <!-- tree12 -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+              <div class="card shadow" style="width: 15rem; ">
+               <img class="card-img-top"  
+               src="https://dy1yydbfzm05w.cloudfront.net/media/catalog/product/cache/39b52c4cabb46819553175347e38b212/f/b/fbx-ivy-1-1000px_1.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Ivy <br>ไอวี่</h5>
+                 <div class="btn-group">
+                   <a class="btn btn-primary" style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                   data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Detail
+                  </a>
+        
+                  <button type="button" class="btn btn-secondary " style="margin-left: 1%; "
+                  onclick="chooseplant('plant12')"  >
+                    Choose
+                  </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample12">
+                <div class="card card-body">
+                  <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> In both winter and summer, Ivy requires bright light.   <hr>
+                  <i class="fas fa-tint"> WATER</i> Let the top of the soil dry to the touch between wateringsใ <hr>
+                  <i class="fas fa-leaf"> FOOD</i> Fertilize your ivy about once a month in the spring, summer, and fall.
+    
+                </div>
+              </div>
+             </div>
+           </div>
+
+        <!-- tree13 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree" style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="https://cf.shopee.co.th/file/6b5a1d696af8d839ad2b74690fbacbe9" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Alocasia <br>แก้วสารพัดนึก</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary" 
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; "
+              onclick="chooseplant('plant13')"  >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample13">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Your Alocasia will thrive in bright indirect light. <hr>
+                  <i class="fas fa-tint"> WATER</i> Maintain a regular watering schedule and keep the soil of your plant moist, but not wet or saturated. <hr>
+                  <i class="fas fa-leaf"> FOOD</i> For best results, use a general houseplant fertilizer every four weeks during the spring and summer. 
+            </div>
+          </div>
+         </div>
+       </div>
+
+        <!-- tree14 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="https://images-na.ssl-images-amazon.com/images/I/71JOqMfksAL._AC_SX466_.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Mother of Thousands <br>เศรษฐีพันล้าน</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary" 
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+              onclick="chooseplant('plant14')" >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample14">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Kept in bright filtered sunlight, <hr>
+                  <i class="fas fa-tint"> WATER</i>  Watered occasionally. Being a type of succulent <hr>
+                  <i class="fas fa-leaf"> FOOD</i> The plant thrives when growing in well-draining potting soil.
+            </div>
+          </div>
+         </div>
+       </div>
+       
+        <!-- tree15 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="https://candy.ketshopweb.com/upload-img/tree/61dxU4QEXGL._AC_SX466__1.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Zanzibar Gem <br>กวักมรกต</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary" 
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+              onclick="chooseplant('plant15')" >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample15">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> ZZ plants do best in moderate to bright indirect light, but will do fine in extremely low light areas. <hr>
+                  <i class="fas fa-tint"> WATER</i> The ZZ Plant is like a cactus in that it needs less, rather than more, water.  <hr>
+                  <i class="fas fa-leaf"> FOOD</i> Fertilize your ZZ twice a year with a general purpose plant food.
+            </div>
+          </div>
+         </div>
+       </div>
+       
+        <!-- tree16 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="http://cdn.shopify.com/s/files/1/0062/8532/8445/products/Croton_Petra_BB_600x600_43e3de93-be7f-42b5-af06-65113a548278_grande.jpg?v=1581528855" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Croton <br>โกสน</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary" 
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; "
+              onclick="chooseplant('plant16')"  >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample16">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Your Croton will do best in a bright spot, as it needs lots of light (if possible 4-6 hrs. Per day) to produce all those colorful leaves!  <hr>
+                  <i class="fas fa-tint"> WATER</i> When the soil begins to dry out, water your plant thoroughly until the water flows out the bottom of the container.   <hr>
+                  <i class="fas fa-leaf"> FOOD</i> For best results, use a general houseplant fertilizer once in early spring, once in early summer, and again in mid-summer. Do not feed in the fall or winter.
+            </div>
+          </div>
+         </div>
+       </div>
+
+        <!-- tree17 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="http://www.js100.com/uploads/ckeditor/72b32a1f754ba1c09b3695e0cb6cde7fimages/f1(23).jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Spider Ivy / Spider Plant <br>ว่านเศรษฐีเรือนใน</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary"
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+                data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+              onclick="chooseplant('plant17')" >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample17">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Your Spider Plant will tolerate lower light conditions, however, they prefer bright indirect light where they will flourish. <hr>
+                  <i class="fas fa-tint"> WATER</i> Water well, but do not allow the plants to become soggy, which can lead to root rot. <hr>
+                  <i class="fas fa-leaf"> FOOD</i> Fertilize up to twice a month in the spring and summer. 
+    
+            </div>
+          </div>
+         </div>
+       </div>
+       
+        <!-- tree18 -->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 tree " style="margin-top: 3%;">
+          <div class="card shadow" style="width: 15rem; ">
+           <img class="card-img-top"  
+           src="https://www.thaihometown.com/article/photo/s3931/3931.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title">Cape of Good Hope / Dracaena <br>วาสนา</h5>
+             <div class="btn-group">
+               <a class="btn btn-primary"
+               style="background-color: rgb(36, 105, 9); color: aliceblue;"
+               data-toggle="collapse" href="#collapseExample18" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Detail
+              </a>
+    
+              <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
+              onclick="chooseplant('plant18')" >
+                Choose
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample18">
+            <div class="card card-body">
+              <h5> How to take care</h5> 
+                  <i class="fas fa-sun"> LIGHT</i> Your Colorama prefers medium indirect sunlight.  <hr>
+                  <i class="fas fa-tint"> WATER</i> Overwatering causes root rot and is the main reason a Colorama plant dies.  <hr>
+                  <i class="fas fa-leaf"> FOOD</i> This plant likes to be fed every two weeks in the spring and summer with a well-balanced plant food.
+    
+            </div>
+          </div>
+         </div>
+       </div> 
+            </div>
+           </div>
+
+         </div>
+       </div>
+      
+       <!-- content -->
+
+   </div>
+
+
+
 
   </div>
    <!-- =======================END MAIN DIV ======================= -->
 
 
-   
   <!-- ======================= script ======================= -->
+  <script src="https://kit.fontawesome.com/1e03a3f9a4.js" crossorigin="anonymous"></script>
   <script>
     const APPID = "PlantyPot";
     const KEY = "YdWcbv7dCHKEBYX";
     const SECRET = "RZBS1RP2sqs5vVM9BrZ0QMgyL";
-    const ALIAS = "PlantyPot_web";
+    const ALIAS = "Plant_Detail";
     const thing1 = "Pi";
     var microgear = Microgear.create({
       key: KEY,
       secret: SECRET,
       alias: ALIAS
     });
-    // Get the input field
-    var input = document.getElementById("InputPlantName")
-    input.addEventListener("keyup", function(event) {
-    // 13 is the "Enter" key on the keyboard
-      if (event.keyCode === 13) {
-        microgear.chat("Pi",input.value)
-        }
-      });
+    function chooseplant(plant){
+      microgear.chat("Pi",plant.toString())
+    }
 
     microgear.on('message', function (topic, msg) {
-      //document.getElementById("raw_data").innerHTML = "Count= " + msg;
+      document.getElementById("raw_data").innerHTML = "Count= " + msg;
     });
     microgear.on('connected', function () {
       microgear.setAlias(ALIAS);
-      document.getElementById("connected_NETPIE").innerHTML = "Connected to NETPIE"
+      document.getElementById("connected_NETPIE").innerHTML = "Connected to NETPIE Detaillllllll"
     });
     microgear.on('present', function (event) {
       console.log(event);
@@ -101,6 +793,7 @@
     microgear.resettoken(function (err) {
       microgear.connect(APPID);
     });
+
   </script>
   <!-- ======================= END script ======================= -->
 </body>
