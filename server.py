@@ -1,8 +1,9 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
-import requests ,json 
+import requests , json 
 import microgear.client as microgear
-import time
+import time 
+from datetime import datetime
 import logging
 
 #Global variable
@@ -41,17 +42,19 @@ microgear.connect(False)
 
 
 # Read data from Json
-with open("plantInfo.json", "r") as read_file:
-    plantAll = json.load(read_file)
+read_file = open("plantInfo.json","r", encoding="utf8")
+plantAll = json.load(read_file)
 
 
 
 #MAIN FUNCTION
-count=0
 
 while True:
+    
     microgear.chat("PlantyPot_web",str(count))  
     microgear.chat("Plant_Detail",str(result))
-    #count=count+1
-    #print(count)
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print("Current Time =", current_time)
     time.sleep(1)
