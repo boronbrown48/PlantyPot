@@ -1,8 +1,9 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
-import requests ,json 
+import requests , json 
 import microgear.client as microgear
-import time
+import time 
+from datetime import datetime
 import logging
 import random
 #Global variable
@@ -13,7 +14,7 @@ result = json.dumps(None)
 url = 'https://notify-api.line.me/api/notify'
 token = 'QWZmYQEy3mchGCPb9VdlyruZq7ZqJsD6D8VFNJyjVkr'
 headers = {'Authorization':'Bearer '+ token}
-msg ="gu sent this message from line notify"
+#msg ="gu sent this message from line notify"
 #response = requests.post(url, headers=headers, data = {'message':msg}) #command for sending message to line
 
 
@@ -34,20 +35,16 @@ def subscription(topic,message):
 def disconnect():
     logging.debug("disconnect is work")
 
-microgear.setalias("Pi")
+microgear.setalias("Pi2")
 microgear.on_connect = connection
 microgear.on_message = subscription
 microgear.on_disconnect = disconnect
 microgear.subscribe("/mails")
-microgear.connect(False)
+microgear.connect(True)
 
 
-# Read data from Json
-with open("plantInfo.json", "r") as read_file:
-    plantAll = json.load(read_file)
 
 #MAIN FUNCTION
-count=0
 
 while True:
 
@@ -62,4 +59,5 @@ while True:
     microgear.chat("Plant_Detail",str(valueObject))
     #count=count+1
     #print(count)
+
     time.sleep(1)

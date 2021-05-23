@@ -1,10 +1,165 @@
 {
-    "plantname1":{
-        "thaiName":"777",
-        "engName":"KuayKuay"
+    "plant01":{
+        "thaiName":"พลูด่าง",
+        "engName":"Golden pothos",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 100,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+
     },
-    "plantname2":{
-        "thaiName":"8888",
-        "engName":"KuayKuay8888"
+    "plant02":{
+        "thaiName":"กระบองเพชร",
+        "engName":"Cactus",
+        "minLight" : 3000,
+        "maxLight" : 400,
+        "water" : 100,
+        "Type": "High",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant03":{
+        "thaiName":"มอนสเตอร่า",
+        "engName":"Monstera",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 100,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant04":{
+        "thaiName":"ลิ้นมังกร",
+        "engName":"Snake Plant",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 100,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant05":{
+        "thaiName":"ช้อนเงินช้อนทอง",
+        "engName":"Banyan Tree",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 100,
+        "Type": "Medium",
+        "energy": [-2.5,10,-5,-1]
+    },
+    "plant06":{
+        "thaiName":"ยางอินเดีย",
+        "engName":"Rubber plant",
+        "minLight" : 3000,
+        "maxLight" : 400,
+        "water" : 90,
+        "Type": "High",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant07":{
+        "thaiName":"ไทรใบสัก",
+        "engName":"Fiddle Fig",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 90,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant08":{
+        "thaiName":"ฟิโลเดนดรอน",
+        "engName":"Philodendron",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 100,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant09":{
+        "thaiName":"ซานาดู",
+        "engName":"Xanadu",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 100,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant10":{
+        "thaiName":"บอสตันเฟิร์น",
+        "engName":"Boston fern",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 80,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant11":{
+        "thaiName":"เขียวหมื่นปี",
+        "engName":"Aglaonema",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 80,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant12":{
+        "thaiName":"ไอวี่",
+        "engName":"Ivy",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 90,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant13":{
+        "thaiName":"แก้วสารพัดนึก",
+        "engName":"Alocasia",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 100,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant14":{
+        "thaiName":"เศรษฐีพันล้าน",
+        "engName":"Mother of Thousands",
+        "minLight" : 3000,
+        "maxLight" : 400,
+        "water" : 100,
+        "Type": "High",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant15":{
+        "thaiName":"กวักมรกต",
+        "engName":"Zanzibar Gem",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 100,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant16":{
+        "thaiName":"โกสน",
+        "engName":"Croton",
+        "minLight" : 4000,
+        "maxLight" : 500,
+        "water" : 80,
+        "Type": "Medium",
+        "energy": [-10,-2.5,10,-2]
+    },
+    "plant17":{
+        "thaiName":"ว่านเศรษฐีเรือนใน",
+        "engName":"Spider Ivy",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 100,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
+    },
+    "plant18":{
+        "thaiName":"วาสนา",
+        "engName":"Cape of Good Hope / Dracaena",
+        "minLight" : 13000,
+        "maxLight" : 1000,
+        "water" : 90,
+        "Type": "Low",
+        "energy": [10,-5,-10,0]
     }
 }
