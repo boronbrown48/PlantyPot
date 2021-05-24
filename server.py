@@ -83,52 +83,54 @@ def decreseEnergyDay(x,value):
     second = int(now.strftime("%S"))
     status = ''
     if  type[x["Type"]] == 1 :
-#         if 1000 < value and 13000 > value :
-#             status = 'Satisfied'
-#             if(minute == 00 and second == 1) or (minute == 00 and second == 2):
-#                 if energy == 100 :
-#                     energy = energy
-#                 else :
-#                     energy = energy + (x["energy"][0])
-#         elif 500 < value and 1000 > value :
-#             status = 'Unsatisfied'
-#             if(minute == 00 and second == 1) or (minute == 00 and second == 2):
-#                 energy = energy - (x["energy"][1])
-#                 if energy <= 0 :
-#                     energy = 0
-#         elif value < 500 :
-#             status = 'Unsatisfied'
-#             if(minute == 00 and second == 1) or (minute == 00 and second == 2):
-#                 energy = energy + (x["energy"][2])
-#                 if energy <= 0 :
-#                     energy = 0
-#         else :
-#             status = 'Unsatisfied'
-#             if(minute == 00 and second == 1) or (minute == 00 and second == 2):
-#                 energy = energy + (x["energy"][3])
-#                 if energy <= 0 :
-#                     energy = 0
         if 1000 < value and 13000 > value :
             status = 'Satisfied'
-            if energy >= 100 :
-                energy = 100
-            else :
-                energy = energy + (x["energy"][0])
+            if(minute == 00 and second == 1) or (minute == 00 and second == 2):
+                if energy >= 100 :
+                    energy = energy
+                else :
+                    energy = energy + (x["energy"][0])
         elif 500 < value and 1000 > value :
             status = 'Unsatisfied'
-            energy = energy - (x["energy"][1])
-            if energy <= 0 :
-                energy = 0
+            if(minute == 00 and second == 1) or (minute == 00 and second == 2):
+                energy = energy - (x["energy"][1])
+                if energy <= 0 :
+                    energy = 0
         elif value < 500 :
             status = 'Unsatisfied'
-            energy = energy + (x["energy"][2])
-            if energy <= 0 :
+            if(minute == 00 and second == 1) or (minute == 00 and second == 2):
+                energy = energy + (x["energy"][2])
+                if energy <= 0 :
                     energy = 0
         else :
             status = 'Unsatisfied'
-            energy = energy-1
-            if energy <= 0 :
-                energy = 0
+            if(minute == 00 and second == 1) or (minute == 00 and second == 2):
+                energy = energy + (x["energy"][3])
+                if energy <= 0 :
+                    energy = 0
+# TEST ===========================================
+        # if 1000 < value and 13000 > value :
+        #     status = 'Satisfied'
+        #     if energy >= 100 :
+        #         energy = 100
+        #     else :
+        #         energy = energy + (x["energy"][0])
+        # elif 500 < value and 1000 > value :
+        #     status = 'Unsatisfied'
+        #     energy = energy - (x["energy"][1])
+        #     if energy <= 0 :
+        #         energy = 0
+        # elif value < 500 :
+        #     status = 'Unsatisfied'
+        #     energy = energy + (x["energy"][2])
+        #     if energy <= 0 :
+        #             energy = 0
+        # else :
+        #     status = 'Unsatisfied'
+        #     energy = energy-1
+        #     if energy <= 0 :
+        #         energy = 0
+# TEST ===========================================
     elif  type[x["Type"]] == 2 :
         if 500 < value and 4000 > value :
             status = 'Satisfied'
@@ -243,20 +245,14 @@ while True :
                 res_l = decreseEnergyNight(plant)
             else :
                 res_l = decreseEnergyDay(plant,light)
-        #Test=============================
-        #res_l = decreseEnergyDay(plant,light)
-        #=================================
+
         if res_l["status"] in ["Unsatisfied"] :
             GPIO.output(7,GPIO.HIGH)
             GPIO.output(13,GPIO.LOW)
         else :
             GPIO.output(7,GPIO.LOW)
             GPIO.output(13,GPIO.HIGH)
-        #Demo
-        #if (minute > 10 and minute < 12) :
-        #    res = decreseEnergyNight(Test_Cactus)
-        #else :
-        #    res = decreseEnergyDay(Test_Cactus,3100)
+
         #Check Moist
         res_m = checkMoist(plant,moist)
     
@@ -272,9 +268,6 @@ while True :
             "latestWater" : str(res_m["latestWater"]),
             "img" : str(plant["img"])
         }
-        moivalue =(100-res_m["moist"])*100/70
-        if moivalue >= 100 :
-            moivalue = 100
         if res_l["energy"] <= 40 and check == 0 :
             msg1 ="Your plant energy is low,"
             msg2 ="Pease move your pot to satisfied place "
@@ -291,6 +284,9 @@ while True :
         print("Result : ",str(output))
         #LCD Display
         energyvalue =str(res_l["energy"])
+        moivalue =(100-res_m["moist"])*100/70
+        if moivalue >= 100 :
+            moivalue = 100
         lcd.lcd_display_string("Moisture : "+str(moivalue),2)
         if res_l["energy"]==100:
             lcd.lcd_display_string("Energy : "+energyvalue,1)
