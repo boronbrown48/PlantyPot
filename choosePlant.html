@@ -140,10 +140,7 @@ h4{
             <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#choose">Pricing</a>
+            <a class="nav-link" href="#choose">Plant</a>
           </li>
         </ul>
       </div>
@@ -158,7 +155,7 @@ h4{
         <div id="home" class="card text-white">
             <img src="https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
             class="img-fluid top" alt="Responsive image">
-                  <div class="card-img-overlay text text-center " >
+                  <div class="card-img-overlay text text-center " style="padding-top: 20%;" >
                     <h2 class="responsive" >Welcome To planty pot</h2>
                     <p class="card-text" style="text-transform:none; font-weight: 300;">This is a website for Planty Pot lovers.</p>
                   </div>
@@ -607,7 +604,7 @@ h4{
               </a>
     
               <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
-              onclick="chooseplant('plant14')" >
+              onclick="/* chooseplant('plant14') */" >
                 Choose
               </button>
             </div>
@@ -780,6 +777,7 @@ h4{
     });
     function chooseplant(plant){
       microgear.chat("Pi",plant.toString())
+      window.location.href = "./plantDetail.html"
     }
 
     microgear.on('message', function (topic, msg) {
