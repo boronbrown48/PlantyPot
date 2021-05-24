@@ -604,7 +604,7 @@ h4{
               </a>
     
               <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
-              onclick="/* chooseplant('plant14') */" >
+              onclick="chooseplant('plant14')" >
                 Choose
               </button>
             </div>
@@ -768,24 +768,23 @@ h4{
     const APPID = "PlantyPot";
     const KEY = "YdWcbv7dCHKEBYX";
     const SECRET = "RZBS1RP2sqs5vVM9BrZ0QMgyL";
-    const ALIAS = "Plant_Detail";
+    const ALIAS = "PlantyPot_Choose";
     const thing1 = "Pi";
+    
     var microgear = Microgear.create({
       key: KEY,
       secret: SECRET,
       alias: ALIAS
     });
-    function chooseplant(plant){
-      microgear.chat("Pi",plant.toString())
-      window.location.href = "./plantDetail.html"
+    async function chooseplant(plant){
+      microgear.chat(thing1,plant)
+      window.location.href="./plantDetail.html"
     }
+    microgear.on('message', async function (topic, msg) {
 
-    microgear.on('message', function (topic, msg) {
-      document.getElementById("raw_data").innerHTML = "Count= " + msg;
     });
     microgear.on('connected', function () {
       microgear.setAlias(ALIAS);
-      document.getElementById("connected_NETPIE").innerHTML = "Connected to NETPIE Detaillllllll"
     });
     microgear.on('present', function (event) {
       console.log(event);
@@ -797,6 +796,7 @@ h4{
       microgear.connect(APPID);
     });
 
+    
   </script>
   <!-- ======================= END script ======================= -->
 </body>
