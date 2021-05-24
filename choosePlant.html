@@ -40,11 +40,14 @@ h2 {
   font-weight: 450;
   
 }
-
+p{
+  font-size: 12px;
+  padding-right: 6%;
+}
 @media  only screen and (max-width:480px){
     h1.responsive { font-size: 20px; }
     h2.responsive { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
-    h3.responsive { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+    h5.responsive { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
     p.responsive { font-size: 10px; }
     img.top{
         width: 100%;
@@ -61,8 +64,8 @@ span.dot-1 {
     font-family: sans-serif;
     text-transform:uppercase;
     color: aliceblue;
-    font-weight: 550;
-    text-shadow: rgba(0, 0, 0, 0.555) 2px 2px 10px;
+    font-weight: 750;
+    text-shadow: rgba(0, 0, 0, 0.87) 2px 2px 10px;
 }
 h1{
   font-size: 25px;
@@ -137,10 +140,7 @@ h4{
             <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#choose">Pricing</a>
+            <a class="nav-link" href="#choose">Plant</a>
           </li>
         </ul>
       </div>
@@ -155,23 +155,25 @@ h4{
         <div id="home" class="card text-white">
             <img src="https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
             class="img-fluid top" alt="Responsive image">
-                  <div class="card-img-overlay text text-center ">
+                  <div class="card-img-overlay text text-center " style="padding-top: 20%;" >
                     <h2 class="responsive" >Welcome To planty pot</h2>
-                    <p class="card-text" style="text-transform:none; font-weight: 300;">This is a website for plant lovers.</p>
+                    <p class="card-text" style="text-transform:none; font-weight: 300;">This is a website for Planty Pot lovers.</p>
                   </div>
             </div>
         </div>
         
+        <!-- page2 -->
         <div id="features" class="col-sm-5 col-md-5 col-lg-5 col-5 yourContainer " style="margin-top: 5%; padding: 0%;" >
           <img class="card-img " src="https://cdn.shopify.com/s/files/1/1706/1307/products/Aspidistra-Cast-Iron-Plant-Beth-Ball-Matt-White-Planter_b7654923-d940-401c-9932-d2c9c531dbd4_2000x.jpg?v=1569092947" alt="Card image">
         </div> 
 
-        <div class="col-sm-7 col-md-7 col-lg-7 col-7 " style=" margin-top: 10%;">
+        <div class="col-sm-7 col-md-7 col-lg-7 col-7 " style=" margin-top: 10%; padding-left: 0%; ">
           <div class="innerrow " >
-            <h3 clss="responsive" style="text-align:left;  "
-            >What is PlantPot<span class="dot-1">.</span>
-            </h3>
-            <p  >Lorem ipsum dolor sit amet ipsum dolor sit amet.</p>
+            <h5 clss="responsive" style="text-align:left;  "
+            >What is PlantyPot<span class="dot-1">.</span>
+            </h5>
+            <p>Planty Pot คือ กระถางต้นไม้อัจฉริยะที่ช่วยดูแลต้นไม้ภายในบ้านของคุณ 
+              ซึ่งมีฟังก์ชันต่างๆ ทั้งการรดน้ำและคำนวนแสงแดดที่ควรได้รับ เพื่อให้ต้นไม้ของคุณเจริญเติบโตอย่างแข็งแรงและเบิกบาน!</p>
           </div>
         </div>
 
@@ -602,7 +604,7 @@ h4{
               </a>
     
               <button type="button" class="btn btn-secondary " style="margin-left: 1%; " 
-              onclick="chooseplant('plant14')" >
+              onclick="/* chooseplant('plant14') */" >
                 Choose
               </button>
             </div>
@@ -775,6 +777,7 @@ h4{
     });
     function chooseplant(plant){
       microgear.chat("Pi",plant.toString())
+      window.location.href = "./plantDetail.html"
     }
 
     microgear.on('message', function (topic, msg) {
